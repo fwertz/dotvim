@@ -2,7 +2,7 @@
 
 # Link dotvim to actual home directory and change dir to it
 ln -s $(pwd) ~/.vim
-cd !$
+cd ~/.vim
 
 # Static link rc files to home dir
 ln -s $(pwd)/vimrc ~/.vimrc
