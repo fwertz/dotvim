@@ -35,14 +35,15 @@ Installtion
 ------------
 
 ### Linux
-Find a directory where you'd like to pull down this repository
-> git clone https://github.com/fwertz/dotvim.git
-> ./install.sh
+Find a directory where you'd like to pull down this repository.
+`git clone https://github.com/fwertz/dotvim.git`
+`./install.sh`
 
 
 FAQ
 ---
 > Yo, Fwertz, where can I learn about the basics of README markup?
+
 Right [here](http://daringfireball.net/projects/markdown/basics), chief!
 
 
