@@ -37,9 +37,8 @@ Installation
 ### Linux
 Find a directory where you'd like to pull down this repository.
 	
-	`git clone https://github.com/fwertz/dotvim.git`
-	`./install.sh`
-
+	git clone https://github.com/fwertz/dotvim.git
+	./install.sh`
 
 FAQ
 ---
