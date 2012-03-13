@@ -8,10 +8,10 @@ I find myself moving around machines quite frequently so I decided it would be n
 
 ### Inspiration
 
-A lot of pros and wannabe's like me have been doing this much longer than I. My inspiration and the basis for this setup comes from [Sole's](http://https://github.com/sole/dotvim) setup on GitHub. 
+A lot of pros and wannabe's alike have been doing this much longer than I. My inspiration, and the basis for this setup comes from [Sole's](http://https://github.com/sole/dotvim) repository on GitHub. 
 
 ### What's in it
-I changed up the vimrc to my needs, but it's def. still growing. I'm still quite a vim newb so as I learn more I'll refine some of the empty and funny-looking details.
+I changed up the vimrc to my needs, but it's definitely still growing. I'm still quite a vim newb so as I learn more I'll refine some of the empty and funny-looking details.
 
 #### Plugins
 + [Nerd Commenter](https://github.com/scrooloose/nerdcommenter)
@@ -38,7 +38,7 @@ Installation
 Find a directory where you'd like to pull down this repository.
 	
 	git clone https://github.com/fwertz/dotvim.git
-	./install.sh`
+	./install.sh
 
 FAQ
 ---

@@ -92,3 +92,12 @@ function! HasPaste()
         return ''
     endif
 endfunction
+
+" COLOR column and preveting code wrapping
+set tw=85 fo+=t
+if exists('&colorcolumn')
+  set colorcolumn=+1
+else
+  au BufWinEnter * 
+  \ let w:m2=matchadd('ErrorMsg', '\%>85v.\+', -1)
+endif
