@@ -31,11 +31,12 @@ I changed up the vimrc to my needs, but it's def. still growing. I'm still quite
 + [Sunburst](https://github.com/gigamo/sunburst.vim)
 
 
-Installtion
+Installation
 ------------
 
 ### Linux
 Find a directory where you'd like to pull down this repository.
+	
 	`git clone https://github.com/fwertz/dotvim.git`
 	`./install.sh`
 
@@ -43,6 +44,7 @@ Find a directory where you'd like to pull down this repository.
 FAQ
 ---
 > Yo, Fwertz, where can I learn about the basics of README markup?
+
 + Right [here](http://daringfireball.net/projects/markdown/basics), chief!
 
 
