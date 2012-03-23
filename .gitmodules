@@ -15,4 +15,4 @@
 	url = git@github.com:tpope/vim-surround.git
 [submodule "bundle/vim-autoclose"]
 	path = bundle/vim-autoclose
-	url = git@github.com:Townk/vim-autoclose.git
+	url = git@github.com:Townk/vim-autoclose
