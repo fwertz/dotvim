@@ -1,5 +1,4 @@
-set showmode
-set showcmd
+
 set autoindent
 set hlsearch
 set showmatch
@@ -14,13 +13,16 @@ set mouse=a
 set t_Co=256
 
 " SET COLOR SCHEME
-:colorscheme lucius
+:colorscheme redblack
 
 " ENABLE SYNTAX HIGHLIGHT
 syntax enable
 
 " HIGHLIGHT CURSOR LINE
 set cursorline
+
+" Reset leader key
+let mapleader = ","
 
 " HIDE / SHOW INVISIBLE CHARS
 " Toggles `set list`, for alternating between showing or hiding invisible chars
@@ -101,3 +103,30 @@ else
   au BufWinEnter * 
   \ let w:m2=matchadd('ErrorMsg', '\%>85v.\+', -1)
 endif
+
+" Cool tab completion
+inoremap <leader><tab> <C-X><C-O>
+
+" Silly tab completion
+function! Smart_TabComplete()
+  let line = getline('.')                         " current line
+
+  let substr = strpart(line, -1, col('.')+1)      " from the start of the current
+                                                  " line to one character right
+                                                  " of the cursor
+  let substr = matchstr(substr, "[^ \t]*$")       " word till cursor
+  if (strlen(substr)==0)                          " nothing to match on empty string
+    return "\<tab>"
+  endif
+  let has_period = match(substr, '\.') != -1      " position of period, if any
+  let has_slash = match(substr, '\/') != -1       " position of slash, if any
+  if (!has_period && !has_slash)
+    return "\<C-X>\<C-P>"                         " existing text matching
+  elseif ( has_slash )
+    return "\<C-X>\<C-F>"                         " file matching
+  else
+    return "\<C-X>\<C-O>"                         " plugin matching
+  endif
+endfunction
+
+inoremap <S-tab> <c-r>=Smart_TabComplete()<CR>
