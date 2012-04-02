@@ -1,78 +1,20 @@
-
+set nocompatible
 set autoindent
 set hlsearch
-set showmatch
-
-" Pathogen
-call pathogen#infect()
-
-" Enable mouse support
+set incsearch
 set mouse=a
-
-" Enable 256 colors
-set t_Co=256
-
-" SET COLOR SCHEME
-:colorscheme redblack
-
-" ENABLE SYNTAX HIGHLIGHT
-syntax enable
-
-" HIGHLIGHT CURSOR LINE
+set number
 set cursorline
-
-" Reset leader key
-let mapleader = ","
-
-" HIDE / SHOW INVISIBLE CHARS
-" Toggles `set list`, for alternating between showing or hiding invisible chars
-" To toggle, enter \l as a command (backward slash lowercase L)
-nmap <leader>l :set list!<CR>
-
-" Using same symbols as TextMate
-set listchars=tab:▸\ ,eol:¬
-
-" SPACES & TABS
+set showmatch
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set noexpandtab
-
-" LINE NUMBERS
-set number
-
-" REMAP CONTROL+V AND CONTROL+C TO PASTE AND COPY RESPECTIVELY
-nmap <C-V> "+gP
-imap <C-V> <ESC><C-V>i
-vmap <C-C> "+y
-
-" AUTOCOMPLETE (didn't work properly...)
-" autocmd FileType python set omnifunc=pythoncomplete#Complete
-" autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-" autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-" autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-" autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-" autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-" autocmd FileType c set omnifunc=ccomplete#Complete
-
-" AUTOMATIC INDENTATION
-filetype plugin on
-filetype indent on
-autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,(
-
-au BufRead,BufNewFile *.js set ft=javascript syntax=javascript
-
-" SUPER RETAB
-" For converting indented spaces to tabs
-" To use: visually select block, then enter Tab2Space or Space2Tab as commands
-" Source: http://vim.wikia.com/wiki/Super_retab
-:command! -range=% -nargs=0 Tab2Space execute "<line1>,<line2>s/^\\t\\+/\\=substitute(submatch(0), '\\t', repeat(' ', ".&ts."), 'g')"
-:command! -range=% -nargs=0 Space2Tab execute "<line1>,<line2>s/^\\( \\{".&ts."\\}\\)\\+/\\=substitute(submatch(0), ' \\{".&ts."\\}', '\\t', 'g')"
-
-
-" NERDTree
-" Toggle between showing/hidding NERDTree
-map <f2> :NERDTreeToggle<CR>
+set t_Co=256
+set visualbell
+set noerrorbells
+set nobackup
+set noswapfile
 
 " STATUS LINE ON STEROIDS
 " https://github.com/vgod/vimrc/blob/master/vimrc
@@ -81,6 +23,43 @@ set statusline=\ %{HasPaste()}%<%-15.25(%f%)%m%r%h\ %w\ \
 set statusline+=\ \ \ [%{&ff}/%Y]
 set statusline+=\ \ \ %<%20.30(%{hostname()}:%{CurDir()}%)\
 set statusline+=%=%-10.(%l,%c%V%)\ %p%%/%L
+
+let mapleader = ","
+
+call pathogen#infect()
+
+:colorscheme molokai
+
+syntax enable
+
+filetype plugin indent on
+if has('autocmd')
+endif
+
+
+nmap <C-V> "+gP
+imap <C-V> <ESC><C-V>i
+vmap <C-C> "+y
+map <f2> :NERDTreeToggle<CR>
+inoremap <leader><tab> <C-X><C-O>
+
+
+" SUPER RETAB
+" For converting indented spaces to tabs
+" To use: visually select block, then enter Tab2Space or Space2Tab as commands
+" Source: http://vim.wikia.com/wiki/Super_retab
+:command! -range=% -nargs=0 Tab2Space execute "<line1>,<line2>s/^\\t\\+/\\=substitute(submatch(0), '\\t', repeat(' ', ".&ts."), 'g')"
+:command! -range=% -nargs=0 Space2Tab execute "<line1>,<line2>s/^\\( \\{".&ts."\\}\\)\\+/\\=substitute(submatch(0), ' \\{".&ts."\\}', '\\t', 'g')"
+
+" COLOR column and preveting code wrapping
+set tw=85 fo+=t
+if exists('&colorcolumn')
+  set colorcolumn=+1
+else
+  au BufWinEnter * 
+  \ let w:m2=matchadd('ErrorMsg', '\%>85v.\+', -1)
+endif
+
 
 function! CurDir()
     let curdir = substitute(getcwd(), $HOME, "~", "")
@@ -94,39 +73,3 @@ function! HasPaste()
         return ''
     endif
 endfunction
-
-" COLOR column and preveting code wrapping
-set tw=85 fo+=t
-if exists('&colorcolumn')
-  set colorcolumn=+1
-else
-  au BufWinEnter * 
-  \ let w:m2=matchadd('ErrorMsg', '\%>85v.\+', -1)
-endif
-
-" Cool tab completion
-inoremap <leader><tab> <C-X><C-O>
-
-" Silly tab completion
-function! Smart_TabComplete()
-  let line = getline('.')                         " current line
-
-  let substr = strpart(line, -1, col('.')+1)      " from the start of the current
-                                                  " line to one character right
-                                                  " of the cursor
-  let substr = matchstr(substr, "[^ \t]*$")       " word till cursor
-  if (strlen(substr)==0)                          " nothing to match on empty string
-    return "\<tab>"
-  endif
-  let has_period = match(substr, '\.') != -1      " position of period, if any
-  let has_slash = match(substr, '\/') != -1       " position of slash, if any
-  if (!has_period && !has_slash)
-    return "\<C-X>\<C-P>"                         " existing text matching
-  elseif ( has_slash )
-    return "\<C-X>\<C-F>"                         " file matching
-  else
-    return "\<C-X>\<C-O>"                         " plugin matching
-  endif
-endfunction
-
-inoremap <S-tab> <c-r>=Smart_TabComplete()<CR>
