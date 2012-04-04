@@ -28,7 +28,7 @@ let mapleader = ","
 
 call pathogen#infect()
 
-:colorscheme molokai
+:colorscheme darkburn 
 
 syntax enable
 
