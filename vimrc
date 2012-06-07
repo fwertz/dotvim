@@ -2,7 +2,6 @@ set nocompatible
 set autoindent
 set hlsearch
 set incsearch
-set mouse=a
 set number
 set cursorline
 set showmatch
@@ -15,7 +14,7 @@ set visualbell
 set noerrorbells
 set nobackup
 set noswapfile
-
+set mouse=a
 " STATUS LINE ON STEROIDS
 " https://github.com/vgod/vimrc/blob/master/vimrc
 set laststatus=2
@@ -28,17 +27,18 @@ let mapleader = ","
 
 call pathogen#infect()
 
-:colorscheme darkburn 
+:colorscheme molokai 
 
 syntax enable
 
-filetype plugin indent on
-if has('autocmd')
-endif
+filetype plugin on
+filetype indent on
+"if has('autocmd')
+"endif
 
 
 nmap <C-V> "+gP
-imap <C-V> <ESC><C-V>i
+imap <C-V> <ESC><C-V>
 vmap <C-C> "+y
 map <f2> :NERDTreeToggle<CR>
 inoremap <leader><tab> <C-X><C-O>
