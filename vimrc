@@ -15,6 +15,7 @@ set noerrorbells
 set nobackup
 set noswapfile
 set mouse=a
+
 " STATUS LINE ON STEROIDS
 " https://github.com/vgod/vimrc/blob/master/vimrc
 set laststatus=2
@@ -27,7 +28,7 @@ let mapleader = ","
 
 call pathogen#infect()
 
-:colorscheme molokai 
+:colorscheme molokai
 
 syntax enable
 
@@ -73,3 +74,4 @@ function! HasPaste()
         return ''
     endif
 endfunction
+
