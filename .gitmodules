@@ -30,4 +30,4 @@
 	url = https://github.com/hallettj/jslint.vim.git
 [submodule "bundle/vim-jade"]
 	path = bundle/vim-jade
-	url = git://github.com/digitaltoad/vim-jade.git
+	url = git@github.com:digitaltoad/vim-jade.git
