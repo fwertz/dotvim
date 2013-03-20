@@ -1,33 +1,43 @@
 [submodule "bundle/nerdcommenter"]
 	path = bundle/nerdcommenter
-	url = git@github.com:scrooloose/nerdcommenter.git
+	# url = git@github.com:scrooloose/nerdcommenter.git
+	url = https://github.com/scrooloose/nerdcommenter.git
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
-	url = git@github.com:scrooloose/nerdtree.git
+	# url = git@github.com:scrooloose/nerdtree.git
+	url = https://github.com/scrooloose/nerdtree.git
 [submodule "bundle/vim-fugitive"]
 	path = bundle/vim-fugitive
-	url = git@github.com:tpope/vim-fugitive.git
+	# url = git@github.com:tpope/vim-fugitive.git
+	url = https://github.com/tpope/vim-fugitive.git
 [submodule "bundle/syntastic"]
 	path = bundle/syntastic
-	url = git@github.com:scrooloose/syntastic.git
+	# url = git@github.com:scrooloose/syntastic.git
+	url = https://github.com/scrooloose/syntastic.git
 [submodule "bundle/vim-surround"]
 	path = bundle/vim-surround
-	url = git@github.com:tpope/vim-surround.git
+	# url = git@github.com:tpope/vim-surround.git
+	url = https://github.com/tpope/vim-surround.git
 [submodule "bundle/vim-autoclose"]
 	path = bundle/vim-autoclose
-	url = git@github.com:Townk/vim-autoclose
+	# url = git@github.com:Townk/vim-autoclose
+	url = https://github.com/Townk/vim-autoclose.git
 [submodule "bundle/supertab"]
 	path = bundle/supertab
-	url = git@github.com:ervandew/supertab.git
+	# url = git@github.com:ervandew/supertab.git
+	url = https://github.com/ervandew/supertab
 [submodule "bundle/closetag"]
 	path = bundle/closetag
-	url = git@github.com:docunext/closetag.vim
+	# url = git@github.com:docunext/closetag.vim
+	url = https://github.com/docunext/closetag.vim.git
 [submodule "bundle/zencoding-vim"]
 	path = bundle/zencoding-vim
-	url = git@github.com:mattn/zencoding-vim.git
+	# url = git@github.com:mattn/zencoding-vim.git
+	url = https://github.com/mattn/zencoding-vim.git
 [submodule "bundle/jslint"]
 	path = bundle/jslint
 	url = https://github.com/hallettj/jslint.vim.git
 [submodule "bundle/vim-jade"]
 	path = bundle/vim-jade
-	url = git@github.com:digitaltoad/vim-jade.git
+	# url = git@github.com:digitaltoad/vim-jade.git
+	url = https://github.com/digitaltoad/vim-jade.git
