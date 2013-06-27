@@ -16,6 +16,20 @@ set nobackup
 set noswapfile
 set mouse=a
 
+" https://tutsplus.com/lesson/a-few-more-vim-settings/
+set scrolloff=10
+set linebreak
+set wildmenu
+set undofile
+
+onoremap w iw
+
+nnoremap j gj
+nnoremap k gk
+nnoremap 0 g0
+nnoremap $ g$
+" END https://tutsplus.com/lesson/a-few-more-vim-settings/
+
 " STATUS LINE ON STEROIDS
 " https://github.com/vgod/vimrc/blob/master/vimrc
 set laststatus=2
@@ -43,6 +57,12 @@ imap <C-V> <ESC><C-V>
 vmap <C-C> "+y
 map <f2> :NERDTreeToggle<CR>
 inoremap <leader><tab> <C-X><C-O>
+
+" No array keys, brah
+noremap <left> <nop>
+noremap <right> <nop>
+noremap <up> <nop>
+noremap <down> <nop>
 
 
 " SUPER RETAB
@@ -74,4 +94,11 @@ function! HasPaste()
         return ''
     endif
 endfunction
+
+
+" From https://tutsplus.com/lesson/autocommands
+" autocmd event pattern command
+
+" Format HTML on load
+autocmd BufRead,BufWritePre *.html normal gg=G
 
