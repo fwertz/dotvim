@@ -41,3 +41,6 @@
 	path = bundle/vim-jade
 	# url = git@github.com:digitaltoad/vim-jade.git
 	url = https://github.com/digitaltoad/vim-jade.git
+[submodule "bundle/jshint"]
+	path = bundle/jshint
+	url = https://github.com/walm/jshint.vim

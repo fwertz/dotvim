@@ -5,9 +5,9 @@ set incsearch
 set number
 set cursorline
 set showmatch
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 set noexpandtab
 set t_Co=256
 set visualbell
