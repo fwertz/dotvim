@@ -30,13 +30,6 @@
 	path = bundle/closetag
 	# url = git@github.com:docunext/closetag.vim
 	url = https://github.com/docunext/closetag.vim.git
-[submodule "bundle/zencoding-vim"]
-	path = bundle/zencoding-vim
-	# url = git@github.com:mattn/zencoding-vim.git
-	url = https://github.com/mattn/zencoding-vim.git
-[submodule "bundle/jslint"]
-	path = bundle/jslint
-	url = https://github.com/hallettj/jslint.vim.git
 [submodule "bundle/vim-jade"]
 	path = bundle/vim-jade
 	# url = git@github.com:digitaltoad/vim-jade.git
@@ -44,3 +37,6 @@
 [submodule "bundle/jshint"]
 	path = bundle/jshint
 	url = https://github.com/walm/jshint.vim
+[submodule "bundle/emmet-vim"]
+	path = bundle/emmet-vim
+	url = https://github.com/mattn/emmet-vim
